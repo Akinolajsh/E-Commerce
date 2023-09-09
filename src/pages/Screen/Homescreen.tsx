@@ -3,6 +3,7 @@ import Hero from './Hero'
 import Guaranty from './Guaranty'
 import TopProducts from './Store'
 import Card from '../../components/static/Card'
+import SectionPage from './SectionPage'
 
 const Homescreen = () => {
   return (
@@ -10,7 +11,8 @@ const Homescreen = () => {
         <Hero/>
         <Guaranty/>
         <TopProducts/>
-        <Card/>
+        {/* <Card/> */}
+        <SectionPage/>
     </div>
   )
 }

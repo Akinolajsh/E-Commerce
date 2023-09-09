@@ -1,6 +1,7 @@
 // http://preview.themeforest.net/item/authfy-responsive-login-and-signup-page-template/full_screen_preview/23182208
 import pix from "../../assets/slider2.webp";
 import { BsFacebook, BsTwitter, BsGoogle, BsCamera } from "react-icons/bs";
+import logo from "../../assets/Logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -41,8 +42,7 @@ const SignIn = () => {
             popup: "animate_animated animate_fadeOutUp",
           },
         });
-
-        navigate("/");
+        navigate("/access");
         dispatch(createUser(res));
       } else {
         Swal.fire({
@@ -70,7 +70,10 @@ const SignIn = () => {
       <div className="w-full h-[100vh] bg-[#080707] bg-opacity-30 flex flex-col justify-center items-center">
         {/* Title */}
         <div className="m-5">
-        <div className=" font-bold text-[20px] text-center leading-4 text-white">FRAKIES <br/> <span className="text-[18px] text-gray-300">bags</span></div>
+          <div className=" font-bold text-[20px] text-center leading-4 text-white">
+            FRAKIES <br />{" "}
+            <span className="text-[18px] text-gray-300">bags</span>
+          </div>
         </div>
 
         {/* card */}
@@ -87,8 +90,17 @@ const SignIn = () => {
             {/* left */}
             <div className="w-[40%] px-7 flex flex-col items-center justify-center bg-[dodgerblue] py-[20px]">
               {/* logo */}
-              <div className="">
-              <div className=" font-bold text-[20px] text-center leading-4 ">FRAKIES <br/> <span className="text-[18px] text-gray-300">bags</span></div>
+              <div className="flex items-center flex-col">
+                <div className="w-[50px] h-[50px] bg-white items-center justify-center flex rounded-[50%] overflow-hidden">
+                  <img
+                    src={logo}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-white font-semibold mt-[5px]">
+                  Frankies Bags
+                </div>
               </div>
               {/* text  */}
               <div className="text-[12px] font-bold text-white mt-5 mb-3">
@@ -132,7 +144,7 @@ const SignIn = () => {
               {/* email */}
               <div className="border-b-2 h-[40px] w-full mt-6">
                 <input
-                  className=" w-full outline-none placeholder: text-[13px]"
+                  className=" w-full outline-none placeholder: text-[13px]  bg-white"
                   placeholder="Email Address"
                   {...register("email")}
                 />
@@ -147,7 +159,7 @@ const SignIn = () => {
                 {/* actual inputs */}
                 <div className="flex">
                   <input
-                    className=" outline-none w-full placeholder: text-[13px] placeholder: mb-2"
+                    className=" outline-none w-full placeholder: text-[13px] placeholder: mb-2 bg-white"
                     placeholder="password"
                     {...register("password")}
                   />
